@@ -790,7 +790,7 @@ contract Spacegod is Context, IERC20, Ownable {
     mapping (address => bool) private _isExcluded;
     address[] private _excluded;
 
-    address public _engineeringWalletAddress = 0xCe618ac37899303839284Dc536DB9F4ea404413B;
+    address private _engineeringWalletAddress;
 
     uint256 private constant MAX = ~uint256(0);
     uint256 private _tTotal;
@@ -850,6 +850,7 @@ contract Spacegod is Context, IERC20, Ownable {
 				uint256 _MAXAMOUNT,
 				uint256 _SELLMAXAMOUNT,
 				address _ROUTERADDRESS,
+        address _ENGINEERING_ADDRESS,
 				address _TOKENOWNER) {
 
 
@@ -861,6 +862,8 @@ contract Spacegod is Context, IERC20, Ownable {
 
 	    _name = _NAME;
       _symbol = _SYMBOL;
+
+      _engineeringWalletAddress = _ENGINEERING_ADDRESS;
 
 		_decimals = _DECIMALS;
 
